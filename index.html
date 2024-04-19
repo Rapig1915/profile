@@ -62,6 +62,7 @@
       
       <script src="./assets/_buildManifest.js" defer=""></script>
       <script src="./assets/_ssgManifest.js" defer=""></script>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
    </head>
    <body class="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900">
       <div id="__next">
@@ -77,9 +78,9 @@
                         <p class="mt-4 max-w-xs leading-normal">I build pixel-perfect, engaging, and accessible digital experiences.</p>
                         <nav class="nav hidden lg:block" aria-label="In-page jump links">
                            <ul class="mt-16 w-max">
-                              <li><a class="group flex items-center py-3" href="#about"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">About</span></a></li>
-                              <li><a class="group flex items-center py-3 active" href="#experience"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Experience</span></a></li>
-                              <li><a class="group flex items-center py-3 " href="#projects"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Projects</span></a></li>
+                              <li><a class="nav-link group flex items-center py-3" href="#about"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">About</span></a></li>
+                              <li><a class="nav-link group flex items-center py-3 active" href="#experience"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Experience</span></a></li>
+                              <li><a class="nav-link group flex items-center py-3 " href="#projects"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Projects</span></a></li>
                            </ul>
                         </nav>
                      </div>
@@ -504,7 +505,7 @@
                                              </span>
                                           </a>
                                        </h3>
-                                       <p class="mt-2 text-sm leading-normal">111Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.</p>
+                                       <p class="mt-2 text-sm leading-normal">123Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.</p>
                                     </div>
                                     <img alt="Build a Spotify Connected App Newline course marketing card" loading="lazy" width="200" height="48" decoding="async" data-nimg="1" class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" style="color:transparent" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL_ItLQsaDXKoovO1OZaD1tHPvuRZ-ENWA0vPIrhvhHg&s">
                                  </div>
@@ -710,4 +711,13 @@
          <p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;"></p>
       </next-route-announcer>
    </body>
+   <script>
+      $(document).ready(function(){
+         $(document).on('click', 'a.nav-link', function(event){
+            const navLink = event.target.nodeName === 'SPAN' ? event.target.parentElement : event.target;
+            $('a.nav-link').removeClass('active');
+            $(navLink).addClass('active');
+         });
+      })
+   </script>
 </html>
